@@ -1,0 +1,13 @@
+{
+  "autoload": {
+    "classmap": [
+      "app/"
+    ]
+  },
+  "require": {
+    "pda/pheanstalk": "dev-master"
+  },
+  "require" : {
+    "phpunit/phpunit": "3.7.*"
+  }
+}
