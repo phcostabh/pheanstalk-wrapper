@@ -49,4 +49,14 @@ class PheanstalkQueueTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('Pheanstalk_Job', $result);
     }
 
+    public function testDeleteJobProperlyDeletesJobFromBeanstalkQueue()
+    {
+        $job = m::mock('Pheanstalk_Job');
+        $pheanstalk = $this->queue->getPheanstalk();
+        $pheanstalk->shouldReceive('delete')->once()->with($job);
+
+        $this->queue->deleteJob($job);
+    }
+
 }
+
