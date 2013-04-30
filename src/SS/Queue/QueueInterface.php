@@ -1,5 +1,7 @@
 <?php namespace SS\Queue;
 
+use Pheanstalk_Job;
+
 interface QueueInterface {
 
     /**
@@ -30,7 +32,7 @@ interface QueueInterface {
      * @return \Illuminate\Queue\Jobs\Job|nul
      */
     public function pop($queue = null);
-    
+
     /**
      * Delete a job from the queue.
      *
