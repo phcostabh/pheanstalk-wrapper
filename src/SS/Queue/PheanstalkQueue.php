@@ -112,8 +112,12 @@ class PheanstalkQueue implements QueueInterface {
         return json_encode($task);
     }
 
-    public function deleteJob(Pheanstalk_Job $job)
+    public function deleteJob($job)
     {
+        if (!$job instanceof Pheanstalk_Job) {
+            throw new InvalidArgumentException("This isn't a valid Job");
+        }
+
         $this->pheanstalk->delete($job);
     }
 
