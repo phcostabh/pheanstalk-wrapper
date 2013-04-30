@@ -30,5 +30,13 @@ interface QueueInterface {
      * @return \Illuminate\Queue\Jobs\Job|nul
      */
     public function pop($queue = null);
+    
+    /**
+     * Delete a job from the queue.
+     *
+     * @param  Pheanstalk_Job  $job
+     * @return void
+     */
+    public function delete($queue = null);
 
 }
