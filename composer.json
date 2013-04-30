@@ -1,13 +1,13 @@
 {
-  "autoload": {
-    "classmap": [
-      "app/"
-    ]
-  },
   "require": {
-    "pda/pheanstalk": "dev-master"
+    "pda/pheanstalk": "2.0.*"
   },
-  "require" : {
-    "phpunit/phpunit": "3.7.*"
+  "require-dev":{
+    "mockery/mockery": "0.7.2"
+  },
+  "autoload": {
+    "psr-0": {
+      "SS": "src/"
+    }
   }
 }
