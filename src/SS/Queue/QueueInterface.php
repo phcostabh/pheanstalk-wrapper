@@ -1,7 +1,5 @@
 <?php namespace SS\Queue;
 
-use Pheanstalk_Job;
-
 interface QueueInterface {
 
     /**
@@ -36,9 +34,9 @@ interface QueueInterface {
     /**
      * Delete a job from the queue.
      *
-     * @param  Pheanstalk_Job  $job
+     * @param  mixed $job
      * @return void
      */
-    public function deleteJob(Pheanstalk_Job $job);
+    public function deleteJob($job);
 
 }
