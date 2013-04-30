@@ -37,6 +37,6 @@ interface QueueInterface {
      * @param  Pheanstalk_Job  $job
      * @return void
      */
-    public function delete(Pheanstalk_Job $job);
+    public function deleteJob(Pheanstalk_Job $job);
 
 }
