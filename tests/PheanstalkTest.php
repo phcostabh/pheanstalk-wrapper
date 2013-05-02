@@ -32,6 +32,7 @@ class PheanstalkProofOfConcept extends PHPUnit_Framework_TestCase
 
         $job = $this->_createJob('test_tube', $jobData);
         $this->assertInstanceOf('Pheanstalk_Job', $job);
+        $this->assertEquals($jobData, $job->getData());
         $this->_deleteJob('test_tube', $job);
     }
 
