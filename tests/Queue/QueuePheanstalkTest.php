@@ -2,9 +2,10 @@
 
 use Mockery as m;
 
-class PheanstalkQueueTest extends PHPUnit_Framework_TestCase {
-
-    public function setUp(){
+class PheanstalkQueueTest extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
         $this->queue = new SS\Queue\PheanstalkQueue(m::mock('Pheanstalk_Pheanstalk'), 'default');
     }
 
@@ -24,7 +25,6 @@ class PheanstalkQueueTest extends PHPUnit_Framework_TestCase {
         $this->queue->push('foo', array('data'));
     }
 
-
     public function testDelayedPushProperlyPushesJobOntoBeanstalkd()
     {
         $pheanstalk = $this->queue->getPheanstalk();
@@ -35,7 +35,6 @@ class PheanstalkQueueTest extends PHPUnit_Framework_TestCase {
         $this->queue->later(5, 'foo', array('data'), 'test_tube');
         $this->queue->later(5, 'foo', array('data'));
     }
-
 
     public function testPopProperlyPopsJobOffOfBeanstalkd()
     {
@@ -59,4 +58,3 @@ class PheanstalkQueueTest extends PHPUnit_Framework_TestCase {
     }
 
 }
-
